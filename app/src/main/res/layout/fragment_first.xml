@@ -35,4 +35,13 @@
         app:layout_constraintLeft_toLeftOf="@+id/sanfa2"
         app:layout_constraintStart_toEndOf="@+id/sanfa2"
         />
+
+
+    <Button
+        android:id="@+id/invisibleTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="invisible测试"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_tanlan" />
 </androidx.constraintlayout.widget.ConstraintLayout>

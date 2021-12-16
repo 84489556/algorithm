@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_TanLanFragment"
             app:destination="@id/TanLanFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_InVisibleTestFragment"
+            app:destination="@id/InVisibleTestFragment" />
     </fragment>
 
     <fragment
@@ -27,4 +30,14 @@
             app:destination="@id/FirstFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/InVisibleTestFragment"
+        android:name="com.demo.algorithm.InVisibleTestFragment"
+        android:label="visible测试"
+        tools:layout="@layout/fragment_invisibletest">
+
+        <action
+            android:id="@+id/action_InVisibleTestFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
 </navigation>

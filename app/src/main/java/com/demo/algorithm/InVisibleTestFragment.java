@@ -10,10 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.demo.algorithm.databinding.FragmentFirstBinding;
+import com.demo.algorithm.databinding.FragmentInvisibletestBinding;
 
-public class FirstFragment extends Fragment {
+public class InVisibleTestFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentInvisibletestBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,25 +22,33 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+
+        binding = FragmentInvisibletestBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.buttonTanlan.setOnClickListener(new View.OnClickListener() {
+        binding.visible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_TanLanFragment);
+                binding.testview.setVisibility(View.VISIBLE);
             }
         });
-        binding.invisibleTest.setOnClickListener(new View.OnClickListener() {
+        binding.invisible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_InVisibleTestFragment);
+                binding.testview.setVisibility(View.INVISIBLE);
             }
         });
+        binding.gone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.testview.setVisibility(View.GONE);
+            }
+        });
+
     }
 
     @Override
